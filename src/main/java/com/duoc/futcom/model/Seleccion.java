@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "selecciones")
+
 public class Seleccion { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +39,9 @@ public class Seleccion {
 
     @NotNull
     private String escudoUrl;
+
+
+    @ManyToOne
+    @JoinColumn(name = "grupo_id")
+    private Grupo grupo; 
 }
