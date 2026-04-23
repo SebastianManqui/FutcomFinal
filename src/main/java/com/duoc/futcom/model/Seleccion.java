@@ -6,40 +6,36 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
 @Data
-@Table
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "jugadores")
-public class Jugador {
-
+@Table(name = "selecciones")
+public class Seleccion { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idJugador; 
+    private int id;
 
     @NotBlank
     private String nombre;
 
     @NotNull
-    private int edad;
-
-    @NotNull
-    private int goles;
-
-    @NotNull   
-    private int asistencias;
+    private Integer rankingFifa; 
 
     @NotBlank
-    private String nacionalidad;
-
-    @NotBlank
-    private String clubActual; 
-    
-    @NotNull
-    private int numero;
+    private String confederacion;
 
     @NotNull
-    private int partidos_jugados;
+    private String codigoIso;
 
+    @NotNull
+    private String directorTecnico;
+
+    @NotNull
+    private Integer titulosMundiales;
+
+    @NotNull
+    private String escudoUrl;
 }

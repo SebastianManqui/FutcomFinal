@@ -2,44 +2,36 @@ package com.duoc.futcom.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
-@Table
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "jugadores")
-public class Jugador {
+@Table(name = "estadios")
+public class Estadio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idJugador; 
+    private int id_estadio;
 
     @NotBlank
     private String nombre;
 
-    @NotNull
-    private int edad;
-
-    @NotNull
-    private int goles;
-
-    @NotNull   
-    private int asistencias;
-
     @NotBlank
-    private String nacionalidad;
+    private String ciudad;
 
-    @NotBlank
-    private String clubActual; 
+    @NotNull
+    private Integer capacidad;
     
-    @NotNull
-    private int numero;
+    @NotBlank
+    private String fotoEscudo; 
+   
 
-    @NotNull
-    private int partidos_jugados;
-
+    @OneToMany(mappedBy = "estadio")
+    private List<Partido> partidos;
 }
