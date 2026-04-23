@@ -17,7 +17,7 @@ public class Grupo {
     private Long id;
 
     @NotBlank
-    private String nombre
+    private String nombre;
 
    
     @OneToMany(mappedBy = "grupo")
