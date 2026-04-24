@@ -21,6 +21,15 @@ public class Grupo {
 
     @NotBlank
     private String nombre;
+    
+    @NotBlank
+    private String nombre2;
+
+    @NotBlank
+    private String nombre3;
+
+    @NotBlank
+    private String nombre4;
 
    
     @OneToMany(mappedBy = "grupo")
