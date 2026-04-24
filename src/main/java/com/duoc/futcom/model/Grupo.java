@@ -20,7 +20,7 @@ public class Grupo {
     private Long id;
 
     @NotBlank
-    private String Grupo;   
+    private String grupo;   
 
     @NotBlank
     private String Seleccion ;
