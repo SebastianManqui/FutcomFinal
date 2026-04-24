@@ -20,16 +20,19 @@ public class Grupo {
     private Long id;
 
     @NotBlank
-    private String nombre;
+    private String Grupo;   
+
+    @NotBlank
+    private String Seleccion ;
     
     @NotBlank
-    private String nombre2;
+    private String Seleccion2 ;
 
     @NotBlank
-    private String nombre3;
+    private String Seleccion3;
 
     @NotBlank
-    private String nombre4;
+    private String Seleccion4;
 
    
     @OneToMany(mappedBy = "grupo")
