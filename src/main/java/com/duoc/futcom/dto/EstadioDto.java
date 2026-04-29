@@ -6,8 +6,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JugadorDto {
 
+public class EstadioDto {
+    private String capacidad;
     private String nombre;
-    private String nacionalidad;
+    private String cuidad;
+    
 }
