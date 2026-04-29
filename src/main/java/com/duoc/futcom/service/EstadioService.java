@@ -15,7 +15,6 @@ public class EstadioService {
         return estadioRepo.findAll();
     }
 
-
     public void guardar(Estadio estadio) {
         estadioRepo.save(estadio);
     }
@@ -25,7 +24,6 @@ public class EstadioService {
         return estadioRepo.findById(id).orElse(null);
     }
 
-    
     public void eliminar(int id) {
         estadioRepo.deleteById(id);
     }

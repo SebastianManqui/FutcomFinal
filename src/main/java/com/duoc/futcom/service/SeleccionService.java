@@ -16,16 +16,13 @@ public class SeleccionService {
         return seleccionRepo.findAll();
     }
 
-    
     public void guardaSeleccion(Seleccion seleccion) {
         seleccionRepo.save(seleccion);
     }
-
     
     public Seleccion buscarSeleccionPorId(int id) {
         return seleccionRepo.findById(id).orElse(null);
     }
-
 
     public void eliminarSeleccion(int id) {
         seleccionRepo.deleteById(id);

@@ -15,11 +15,9 @@ public class GrupoService {
         return grupoRepo.findAll();
     }
 
-
     public void guardar(Grupo grupo) {
         grupoRepo.save(grupo);
     }
-
 
     public Grupo buscarPorId(Integer id) {
         return grupoRepo.findById(id).orElse(null);
