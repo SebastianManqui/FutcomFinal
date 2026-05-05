@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class WeatherDTO {
+public class WeatherDto {
 
     @JsonProperty("current_weather")
     private CurrentWeather currentWeather;

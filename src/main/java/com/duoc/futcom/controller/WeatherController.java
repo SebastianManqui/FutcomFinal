@@ -1,5 +1,5 @@
 package com.duoc.futcom.controller;
-import com.duoc.futcom.dto.WeatherDTO;
+import com.duoc.futcom.dto.WeatherDto;
 import com.duoc.futcom.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +24,12 @@ public class WeatherController {
      *   GET /api/v1/clima?lat=-41.47&lon=-72.94   → Puerto Montt
      */
     @GetMapping
-    public ResponseEntity<WeatherDTO> clima(
+    public ResponseEntity<WeatherDto> clima(
             @RequestParam(defaultValue = "-33.45") double lat,
             @RequestParam(defaultValue = "-70.65") double lon) {
 
         System.out.println("[WeatherController] -> clima lat=" + lat + ", lon=" + lon);
-        WeatherDTO resultado = weatherService.obtenerClima(lat, lon);
+        WeatherDto resultado = weatherService.obtenerClima(lat, lon);
         return ResponseEntity.ok(resultado);
     }
 }

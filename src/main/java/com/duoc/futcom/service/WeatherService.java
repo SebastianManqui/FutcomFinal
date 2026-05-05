@@ -1,5 +1,5 @@
 package com.duoc.futcom.service;
-import com.example.bibliotecaduoc.dto.WeatherDto;
+import com.duoc.futcom.dto.WeatherDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class WeatherService {
      * @param longitude longitud (ej: -70.65 para Santiago)
      * @return WeatherDTO con temperatura, viento y más datos actuales
      */
-    public WeatherDTO obtenerClima(double latitude, double longitude) {
+    public WeatherDto obtenerClima(double latitude, double longitude) {
         return weatherWebClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/v1/forecast")
@@ -29,7 +29,7 @@ public class WeatherService {
                         .queryParam("current_weather", true)
                         .build())
                 .retrieve()
-                .bodyToMono(WeatherDTO.class)
+                .bodyToMono(WeatherDto.class)
                 .block();
     }
 }
