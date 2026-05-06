@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Data
 @Entity
@@ -36,5 +38,6 @@ public class Grupo {
 
    
     @OneToMany(mappedBy = "grupo")
+    @JsonIgnore
     private List<Seleccion> selecciones;
 }
