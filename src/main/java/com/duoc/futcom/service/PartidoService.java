@@ -23,7 +23,7 @@ public class PartidoService {
         return partidoRepo.findById(id).orElse(null);
     }
 
-    public void eliminar(int id) {
+    public void eliminarPartido(int id) {
         partidoRepo.deleteById(id);
     }
 }
