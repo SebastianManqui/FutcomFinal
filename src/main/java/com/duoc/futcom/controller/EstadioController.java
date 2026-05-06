@@ -7,50 +7,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
-@Controller
-@RequestMapping("/estadios")
+
+
+@RestController
+@RequestMapping("/api/v1/estadios") 
 public class EstadioController {
 
     @Autowired
     private EstadioService estadioService;
 
+  
     @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("estadios", estadioService.listarTodos());
-        return "estadios/lista";
-    }
-
-    
-    @GetMapping("/nuevo")
-    public String formulario(Model model) {
-        model.addAttribute("estadio", new Estadio());
-        return "estadios/formulario";
+    public List<Estadio> listar() {
+        return estadioService.listarTodos();
     }
 
    
-    @PostMapping("/guardar")
-    public String guardar(@Valid @ModelAttribute("estadio") Estadio estadio, 
-                          BindingResult result) {
-        if (result.hasErrors()) {
-            return "estadios/formulario";
-        }
+    @GetMapping("/{id}")
+    public Estadio buscar(@PathVariable Integer id) {
+        return estadioService.buscarEstadioPorId(id);
+    }
+
+    @PostMapping
+    public void guardar(@Valid @RequestBody Estadio estadio) { 
         estadioService.guardar(estadio);
-        return "redirect:/estadios";
     }
 
 
-    @GetMapping("/editar/{id}")
-    public String editar(@PathVariable("id") Integer id, Model model) {
-        Estadio estadio = estadioService.buscarEstadioPorId(id);
-        model.addAttribute("estadio", estadio);
-        return "estadios/formulario";
-    }
-
-
-    @GetMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable("id") Integer id) {
+    @DeleteMapping("/{id}") 
+    public void eliminar(@PathVariable Integer id) {
         estadioService.eliminar(id);
-        return "redirect:/estadios";
     }
 }
