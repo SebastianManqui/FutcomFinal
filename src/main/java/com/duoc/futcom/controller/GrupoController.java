@@ -25,6 +25,13 @@ public class GrupoController {
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
-        grupoService.eliminar(id);
-    }
+    System.out.println("DEBUG: Iniciando proceso de eliminación para el Grupo ID: " + id);
+    grupoService.eliminar(id);
+    System.out.println("DEBUG: Grupo eliminado correctamente.");
+}
+    @GetMapping("/{id}")
+    public Grupo buscar(@PathVariable Integer id) {
+        System.out.println("DEBUG: Buscando info del Grupo ID: " + id);
+        return grupoService.buscarPorId(id); 
+}
 }
