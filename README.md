@@ -12,7 +12,7 @@ a través del WeatherController, proporcionando información en tiempo real sobr
 y el cumplimiento de los estándares de arquitectura de software modernos exigidos en el nivel universitario.
 
 ¿Como se ejecuta entonces? 
-Primero abrir el VS (visual studio), clonar el repository en la consola, luego se conecta al base dato del laragon y se ejecutaria en el proyecto principal en visual, ya ejecutado creamos las tablas y todo lo que con lleva nuestro proyecto.
+Primero abrimos el VS (visual studio), clonar el repository en la consola, luego se conecta al base dato del laragon y se ejecutaria en el proyecto principal en visual, ya ejecutado creamos las tablas y todo lo que con lleva nuestro proyecto.
 
 AUTORES:
 Diego Arroyo
