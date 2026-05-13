@@ -26,4 +26,9 @@ public class PartidoService {
     public void eliminarPartido(int id) {
         partidoRepo.deleteById(id);
     }
+
+    public Partido buscarPorId(Integer id) {
+    return partidoRepo.findById(id)
+            .orElseThrow(() -> new RuntimeException("Partido con ID " + id + " no encontrado"));
+}
 }

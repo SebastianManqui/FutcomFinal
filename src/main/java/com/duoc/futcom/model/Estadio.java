@@ -28,7 +28,10 @@ public class Estadio {
     private Integer capacidad;
     
     @NotBlank
-    private String fotoEscudo; 
+    private String Seleccion1; 
+
+    @NotBlank
+    private String Seleccion2;
    
 
     @OneToMany(mappedBy = "estadio")

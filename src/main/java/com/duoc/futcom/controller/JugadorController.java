@@ -2,6 +2,7 @@ package com.duoc.futcom.controller;
 import com.duoc.futcom.model.Jugador;
 import com.duoc.futcom.service.JugadorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -21,4 +22,11 @@ public class JugadorController {
     public void crear(@RequestBody Jugador jugador) {
         jugadorService.guardar(jugador);
     }
+
+   @GetMapping("/{id}")
+    public Jugador buscarPorId(@PathVariable("id") Integer id) {
+        System.out.println("DEBUG: Buscando ID: " + id);
+        return jugadorService.buscarPorId(id);
+    }
+ 
 }
