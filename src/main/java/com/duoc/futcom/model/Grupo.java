@@ -6,8 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Data
@@ -24,20 +24,7 @@ public class Grupo {
     @NotBlank
     private String grupo;   
 
-    @NotBlank
-    private String Seleccion ;
-    
-    @NotBlank
-    private String Seleccion2 ;
-
-    @NotBlank
-    private String Seleccion3;
-
-    @NotBlank
-    private String Seleccion4;
-
-   
     @OneToMany(mappedBy = "grupo")
-    @JsonIgnore
+    @JsonManagedReference
     private List<Seleccion> selecciones;
 }

@@ -1,8 +1,6 @@
 package com.duoc.futcom.model;
 import lombok.Data;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -19,8 +17,13 @@ public class Partido {
     @Column(name = "id_partido")
     private int id_partido;
     
-    @NotBlank
-    private String nombre;
+    @ManyToOne
+    @JoinColumn(name = "local_id") 
+    private Seleccion seleccionLocal;
+
+    @ManyToOne
+    @JoinColumn(name = "visitante_id") 
+    private Seleccion seleccionVisitante;
 
     @ManyToOne
     @JoinColumn(name = "estadio_id") 

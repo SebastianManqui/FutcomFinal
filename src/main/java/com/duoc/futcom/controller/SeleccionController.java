@@ -3,6 +3,7 @@ import com.duoc.futcom.dto.SeleccionDto;
 import com.duoc.futcom.model.Seleccion;
 import com.duoc.futcom.service.SeleccionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +16,7 @@ public class SeleccionController {
 
     @GetMapping 
     public List<SeleccionDto> listarSeleccionDtos() {
-        System.out.println("DEBUG: Iniciando listado de selecciones mapeadas a DTO.");
+        System.out.println("DEBUG: Listando todas las selecciones (vía DTO)");
         List<Seleccion> listaEntidades = seleccionService.listarTodas();
 
         return listaEntidades.stream().map(s -> {
@@ -23,22 +24,25 @@ public class SeleccionController {
             dto.setId(s.getId());
             dto.setNombre(s.getNombre());
             dto.setConfederacion(s.getConfederacion());
-            
-            
             if (s.getGrupo() != null) {
                 dto.setIdGrupo(s.getGrupo().getId());
-            
                 dto.setNombreGrupo(s.getGrupo().getGrupo()); 
             }
-            
             return dto;
         }).collect(Collectors.toList());
     }
+        
 
+   
     @GetMapping("/{id}")
-    public Seleccion buscar(@PathVariable int id) {
-        System.out.println("DEBUG: Buscando seleccion con ID: " + id);
-        return seleccionService.buscarSeleccionPorId(id);
+    public ResponseEntity<Seleccion> buscar(@PathVariable Integer id) {
+        System.out.println("DEBUG: [SeleccionController] -> Buscando selección con ID: " + id);
+        Seleccion seleccion = seleccionService.buscarSeleccionPorId(id);
+        if (seleccion == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        return ResponseEntity.ok(seleccion);
     }
 
     @PostMapping

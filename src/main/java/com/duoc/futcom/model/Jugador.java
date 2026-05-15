@@ -41,4 +41,8 @@ public class Jugador {
     @NotNull
     private int partidos_jugados;
 
+    @ManyToOne
+    @JoinColumn(name = "id_seleccion")
+    private Seleccion seleccion;
+
 }
