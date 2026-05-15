@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "3d0104d9-feb4-4dfc-a936-fe94d0d36eb5",
+		"name": "Fut-com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "54570942"
+	},
+	"item": [
+		{
+			"name": "BuscarSeleccionesPorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/selecciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"selecciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarSelecciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/selecciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"selecciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarJugadores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jugadores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarPartidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/partidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"partidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarGrupos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/grupos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"grupos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarEstadioPorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/estadios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estadios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarGrupo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/grupos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"grupos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarEstadios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/estadios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"estadios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarClimaPromedio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clima",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clima"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarJugadorPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jugadores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jugadores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPartidoPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/partidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"partidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearJugador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Cristiano Ronaldo\",\r\n    \"edad\": 39,\r\n    \"goles\": 890,\r\n    \"asistencias\": 250,\r\n    \"nacionalidad\": \"Portugal\",\r\n    \"clubActual\": \"Al-Nassr\",\r\n    \"numero\": 7,\r\n    \"partidos_jugados\": 1200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/jugadores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"jugadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearSelecciones",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Uruguay\",\r\n    \"rankingFifa\": 11,\r\n    \"confederacion\": \"CONMEBOL\",\r\n    \"codigoIso\": \"URU\",\r\n    \"directorTecnico\": \"Marcelo Bielsa\",\r\n    \"titulosMundiales\": 2\r\n}\r\n\r\n{\r\n    \"nombre\": \"Japón\",\r\n    \"rankingFifa\": 15,\r\n    \"confederacion\": \"AFC\",\r\n    \"codigoIso\": \"JPN\",\r\n    \"directorTecnico\": \"Hajime Moriyasu\",\r\n    \"titulosMundiales\": 0\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/selecciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"selecciones"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
