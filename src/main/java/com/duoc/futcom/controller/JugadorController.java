@@ -2,7 +2,6 @@ package com.duoc.futcom.controller;
 import com.duoc.futcom.model.Jugador;
 import com.duoc.futcom.service.JugadorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
