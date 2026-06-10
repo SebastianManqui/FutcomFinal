@@ -15,8 +15,8 @@ public class JugadorService {
         return jugadorRepo.findAll();
     }
 
-    public void guardar(Jugador jugador) {
-        jugadorRepo.save(jugador);
+    public Jugador guardar(Jugador jugador) {
+    return jugadorRepo.save(jugador);
     }
 
     public Jugador buscarPorId(Integer id) {
