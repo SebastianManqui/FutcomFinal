@@ -1,7 +1,8 @@
-package com.duoc.futcom.controller;
+package com.duoc.futcom;
 import com.duoc.futcom.model.Jugador;
 import com.duoc.futcom.model.Seleccion;
 import com.duoc.futcom.service.JugadorService;
+import com.duoc.futcom.controller.JugadorController;
 
 
 import org.junit.jupiter.api.Test;
