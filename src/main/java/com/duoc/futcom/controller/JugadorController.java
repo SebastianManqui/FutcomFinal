@@ -30,5 +30,48 @@ public class JugadorController {
         System.out.println("DEBUG: Buscando ID: " + id);
         return jugadorService.buscarPorId(id);
     }
+
+
+
+   @PutMapping("/{id}")
+    public ResponseEntity<Jugador> actualizar(@PathVariable("id") Integer idJugador, @RequestBody Jugador jugadorDetalles) {
+        System.out.println("DEBUG: Intentando actualizar ID: " + idJugador);
+        
+        Jugador jugadorExistente = jugadorService.buscarPorId(idJugador);
+        
+        if (jugadorExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        jugadorExistente.setNombre(jugadorDetalles.getNombre());
+        jugadorExistente.setEdad(jugadorDetalles.getEdad());
+        jugadorExistente.setGoles(jugadorDetalles.getGoles());
+        jugadorExistente.setAsistencias(jugadorDetalles.getAsistencias());
+        jugadorExistente.setNacionalidad(jugadorDetalles.getNacionalidad());
+        jugadorExistente.setClubActual(jugadorDetalles.getClubActual());
+        jugadorExistente.setNumero(jugadorDetalles.getNumero());
+        jugadorExistente.setPartidos_jugados(jugadorDetalles.getPartidos_jugados());
+    
+        jugadorExistente.setSeleccion(jugadorDetalles.getSeleccion());
+        
+        Jugador jugadorActualizado = jugadorService.guardar(jugadorExistente);
+        return ResponseEntity.ok(jugadorActualizado); 
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer idJugador) {
+        System.out.println("DEBUG: Intentando eliminar ID: " + idJugador);
+        
+        Jugador jugadorExistente = jugadorService.buscarPorId(idJugador);
+        
+        if (jugadorExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        
+        jugadorService.eliminar(idJugador);
+        
+        return ResponseEntity.noContent().build(); 
+    }
  
 }

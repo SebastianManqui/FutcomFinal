@@ -27,6 +27,43 @@ public class PartidoController {
     public void eliminar(@PathVariable int id) {
         partidoService.eliminarPartido(id);
     }
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<Partido> actualizar(@PathVariable("id") Integer id, @RequestBody Partido partidoDetalles) {
+        System.out.println("DEBUG: [PartidoController] -> Intentando actualizar partido con ID: " + id);
+        
+      
+        Partido partidoExistente = partidoService.buscarPorId(id);
+        if (partidoExistente == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        partidoExistente.setSeleccionLocal(partidoDetalles.getSeleccionLocal());
+        partidoExistente.setSeleccionVisitante(partidoDetalles.getSeleccionVisitante());
+        partidoExistente.setEstadio(partidoDetalles.getEstadio());
+        
+        
+        Partido partidoActualizado = partidoService.guardarPartido(partidoExistente);
+        
+        return ResponseEntity.ok(partidoActualizado); 
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
+        System.out.println("DEBUG: [PartidoController] -> Intentando eliminar partido con ID: " + id);
+        
+       
+        Partido partidoExistente = partidoService.buscarPorId(id);
+        if (partidoExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        
+        partidoService.eliminarPartido(id);
+        
+        return ResponseEntity.noContent().build(); 
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Partido> buscarPorId(@PathVariable("id") Integer id) {
          System.out.println("DEBUG: [PartidoController] -> Buscando partido con ID: " + id);

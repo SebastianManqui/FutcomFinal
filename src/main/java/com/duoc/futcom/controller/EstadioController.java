@@ -38,4 +38,36 @@ public class EstadioController {
     public void eliminar(@PathVariable Integer id) {
         estadioService.eliminar(id);
     }
+    //revisar
+    @PutMapping("/{id}")
+    public ResponseEntity<Estadio> actualizar(@PathVariable("id") Integer idEstadio, @Valid @RequestBody Estadio estadioDetalles) {
+        System.out.println("DEBUG: [EstadioController] -> Intentando actualizar estadio ID: " + idEstadio);
+        
+        
+        Estadio estadioExistente = estadioService.buscarEstadioPorId(idEstadio);
+        if (estadioExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        estadioExistente.setNombre(estadioDetalles.getNombre());
+        estadioExistente.setCiudad(estadioDetalles.getCiudad());
+        estadioExistente.setCapacidad(estadioDetalles.getCapacidad());
+        Estadio estadioActualizado = estadioService.guardar(estadioExistente);
+        return ResponseEntity.ok(estadioActualizado);
+        }
+        //revisar
+    @DeleteMapping("/{id}") 
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer idEstadio) {
+        System.out.println("DEBUG: [EstadioController] -> Intentando eliminar estadio ID: " + idEstadio);
+        
+        
+        Estadio estadioExistente = estadioService.buscarEstadioPorId(idEstadio);
+        if (estadioExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        
+        estadioService.eliminar(idEstadio);
+        return ResponseEntity.noContent().build(); 
+    }
 }

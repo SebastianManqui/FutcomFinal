@@ -34,4 +34,34 @@ public class GrupoController {
         System.out.println("DEBUG: Buscando info del Grupo ID: " + id);
         return grupoService.buscarPorId(id); 
 }
+    //revisar
+    @PutMapping("/{id}")
+    public ResponseEntity<Grupo> actualizar(@PathVariable Integer id, @Valid @RequestBody Grupo grupoDetalles) {
+        System.out.println("DEBUG: [GrupoController] -> Intentando actualizar Grupo ID: " + id);
+        
+        Grupo grupoExistente = grupoService.buscarPorId(id);
+        if (grupoExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        grupoExistente.setGrupo(grupoDetalles.getGrupo());
+        Grupo grupoActualizado = grupoService.guardar(grupoExistente);
+        return ResponseEntity.ok(grupoActualizado); 
+    }
+    //revisar
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
+        System.out.println("DEBUG: Iniciando proceso de eliminación para el Grupo ID: " + id);
+        
+        
+        Grupo grupoExistente = grupoService.buscarPorId(id);
+        if (grupoExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+       
+        grupoService.eliminar(id);
+        System.out.println("DEBUG: Grupo eliminado correctamente.");
+        
+        return ResponseEntity.noContent().build(); 
+    }
 }

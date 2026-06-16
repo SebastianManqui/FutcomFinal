@@ -56,4 +56,39 @@ public class SeleccionController {
         System.out.println("DEBUG: Eliminando seleccion ID: " + id);
         seleccionService.eliminarSeleccion(id);
     }
+
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Seleccion> actualizar(@PathVariable Integer id, @RequestBody Seleccion seleccionDetalles) {
+        System.out.println("DEBUG: [SeleccionController] -> Intentando actualizar selección con ID: " + id);
+        Seleccion seleccionExistente = seleccionService.buscarSeleccionPorId(id);
+        if (seleccionExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+
+        seleccionExistente.setNombre(seleccionDetalles.getNombre());
+        seleccionExistente.setRankingFifa(seleccionDetalles.getRankingFifa());
+        seleccionExistente.setConfederacion(seleccionDetalles.getConfederacion());
+        seleccionExistente.setCodigoIso(seleccionDetalles.getCodigoIso());
+        seleccionExistente.setDirectorTecnico(seleccionDetalles.getDirectorTecnico());
+        seleccionExistente.setTitulosMundiales(seleccionDetalles.getTitulosMundiales());
+        
+        seleccionExistente.setGrupo(seleccionDetalles.getGrupo());
+        Seleccion seleccionActualizada = seleccionService.guardaSeleccion(seleccionExistente);
+        return ResponseEntity.ok(seleccionActualizada); 
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable int id) {
+        System.out.println("DEBUG: Eliminando seleccion ID: " + id);
+        
+        
+        Seleccion seleccionExistente = seleccionService.buscarSeleccionPorId(id);
+        if (seleccionExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        
+        seleccionService.eliminarSeleccion(id);
+        return ResponseEntity.noContent().build(); 
+    }
 }
