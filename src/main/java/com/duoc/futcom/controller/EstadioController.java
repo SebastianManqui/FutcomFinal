@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
+import org.springframework.http.ResponseEntity;
 
 
 @RestController
@@ -52,12 +52,16 @@ public class EstadioController {
         estadioExistente.setNombre(estadioDetalles.getNombre());
         estadioExistente.setCiudad(estadioDetalles.getCiudad());
         estadioExistente.setCapacidad(estadioDetalles.getCapacidad());
-        Estadio estadioActualizado = estadioService.guardar(estadioExistente);
-        return ResponseEntity.ok(estadioActualizado);
-        }
+        
+       
+        estadioService.guardar(estadioExistente);
+        
+        
+        return ResponseEntity.ok(estadioExistente);
         //revisar
+    }
     @DeleteMapping("/{id}") 
-    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer idEstadio) {
+    public ResponseEntity<Void> eliminar3(@PathVariable("id") Integer idEstadio) {
         System.out.println("DEBUG: [EstadioController] -> Intentando eliminar estadio ID: " + idEstadio);
         
         

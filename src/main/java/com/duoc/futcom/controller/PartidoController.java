@@ -32,20 +32,20 @@ public class PartidoController {
     public ResponseEntity<Partido> actualizar(@PathVariable("id") Integer id, @RequestBody Partido partidoDetalles) {
         System.out.println("DEBUG: [PartidoController] -> Intentando actualizar partido con ID: " + id);
         
-      
+       
         Partido partidoExistente = partidoService.buscarPorId(id);
         if (partidoExistente == null) {
             return ResponseEntity.notFound().build();
         }
 
+       
         partidoExistente.setSeleccionLocal(partidoDetalles.getSeleccionLocal());
         partidoExistente.setSeleccionVisitante(partidoDetalles.getSeleccionVisitante());
         partidoExistente.setEstadio(partidoDetalles.getEstadio());
         
         
-        Partido partidoActualizado = partidoService.guardarPartido(partidoExistente);
-        
-        return ResponseEntity.ok(partidoActualizado); 
+        partidoService.guardarPartido(partidoExistente);
+        return ResponseEntity.ok(partidoExistente); 
     }
 
     @DeleteMapping("/{id}")

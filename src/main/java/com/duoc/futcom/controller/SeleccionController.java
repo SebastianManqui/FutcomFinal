@@ -61,9 +61,10 @@ public class SeleccionController {
     @PutMapping("/{id}")
     public ResponseEntity<Seleccion> actualizar(@PathVariable Integer id, @RequestBody Seleccion seleccionDetalles) {
         System.out.println("DEBUG: [SeleccionController] -> Intentando actualizar selección con ID: " + id);
+        
         Seleccion seleccionExistente = seleccionService.buscarSeleccionPorId(id);
         if (seleccionExistente == null) {
-            return ResponseEntity.notFound().build(); 
+            return ResponseEntity.notFound().build();
         }
 
         seleccionExistente.setNombre(seleccionDetalles.getNombre());
@@ -72,14 +73,13 @@ public class SeleccionController {
         seleccionExistente.setCodigoIso(seleccionDetalles.getCodigoIso());
         seleccionExistente.setDirectorTecnico(seleccionDetalles.getDirectorTecnico());
         seleccionExistente.setTitulosMundiales(seleccionDetalles.getTitulosMundiales());
-        
         seleccionExistente.setGrupo(seleccionDetalles.getGrupo());
-        Seleccion seleccionActualizada = seleccionService.guardaSeleccion(seleccionExistente);
-        return ResponseEntity.ok(seleccionActualizada); 
+        seleccionService.guardaSeleccion(seleccionExistente);
+        return ResponseEntity.ok(seleccionExistente);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable int id) {
+    public ResponseEntity<Void> eliminar2(@PathVariable int id) {
         System.out.println("DEBUG: Eliminando seleccion ID: " + id);
         
         

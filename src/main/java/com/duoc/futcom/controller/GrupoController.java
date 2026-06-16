@@ -5,6 +5,8 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 @RestController 
 @RequestMapping("/api/v1/grupos") 
@@ -43,25 +45,26 @@ public class GrupoController {
         if (grupoExistente == null) {
             return ResponseEntity.notFound().build(); 
         }
+       
         grupoExistente.setGrupo(grupoDetalles.getGrupo());
-        Grupo grupoActualizado = grupoService.guardar(grupoExistente);
-        return ResponseEntity.ok(grupoActualizado); 
+        grupoService.guardar(grupoExistente);
+                return ResponseEntity.ok(grupoExistente);
     }
     //revisar
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
-        System.out.println("DEBUG: Iniciando proceso de eliminación para el Grupo ID: " + id);
+    //@DeleteMapping("/{id}")
+    //public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
+      //  System.out.println("DEBUG: Iniciando proceso de eliminación para el Grupo ID: " + id);
         
         
-        Grupo grupoExistente = grupoService.buscarPorId(id);
-        if (grupoExistente == null) {
-            return ResponseEntity.notFound().build(); 
-        }
+        //Grupo grupoExistente = grupoService.buscarPorId(id);
+        //if (grupoExistente == null) {
+          //  return ResponseEntity.notFound().build(); 
+        //}
         
        
-        grupoService.eliminar(id);
-        System.out.println("DEBUG: Grupo eliminado correctamente.");
+        //grupoService.eliminar(id);
+        //System.out.println("DEBUG: Grupo eliminado correctamente.");
         
-        return ResponseEntity.noContent().build(); 
-    }
+        //return ResponseEntity.noContent().build(); 
+    //}
 }
