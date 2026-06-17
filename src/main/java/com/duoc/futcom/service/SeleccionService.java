@@ -27,4 +27,6 @@ public class SeleccionService {
     public void eliminarSeleccion(int id) {
         seleccionRepo.deleteById(id);
     }
+
+    
 }

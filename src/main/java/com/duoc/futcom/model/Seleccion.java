@@ -1,5 +1,6 @@
 package com.duoc.futcom.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -7,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 
 
@@ -43,4 +45,12 @@ public class Seleccion {
     @JoinColumn(name = "grupo_id")
     @JsonBackReference
     private Grupo grupo; 
+
+    @OneToMany(mappedBy = "visitante", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Partido> partidosVisitante;
+
+    @OneToMany(mappedBy = "local", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Partido> partidosLocal;
 }

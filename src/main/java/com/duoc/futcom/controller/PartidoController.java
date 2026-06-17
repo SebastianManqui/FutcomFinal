@@ -2,6 +2,7 @@ package com.duoc.futcom.controller;
 import com.duoc.futcom.model.Partido;
 import com.duoc.futcom.service.PartidoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -18,51 +19,41 @@ public class PartidoController {
         return partidoService.listarTodos();
     }
 
-    @PostMapping
-    public void crear(@RequestBody Partido partido) {
-        partidoService.guardarPartido(partido);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable int id) {
-        partidoService.eliminarPartido(id);
-    }
     
     @PutMapping("/{id}")
     public ResponseEntity<Partido> actualizar(@PathVariable("id") Integer id, @RequestBody Partido partidoDetalles) {
         System.out.println("DEBUG: [PartidoController] -> Intentando actualizar partido con ID: " + id);
-        
-       
         Partido partidoExistente = partidoService.buscarPorId(id);
         if (partidoExistente == null) {
             return ResponseEntity.notFound().build();
-        }
-
-       
-        partidoExistente.setSeleccionLocal(partidoDetalles.getSeleccionLocal());
-        partidoExistente.setSeleccionVisitante(partidoDetalles.getSeleccionVisitante());
-        partidoExistente.setEstadio(partidoDetalles.getEstadio());
-        
-        
-        partidoService.guardarPartido(partidoExistente);
-        return ResponseEntity.ok(partidoExistente); 
     }
+    partidoExistente.setLocal(partidoDetalles.getLocal());         
+    partidoExistente.setVisitante(partidoDetalles.getVisitante()); 
+    partidoExistente.setEstadio(partidoDetalles.getEstadio());     
+    
+    
+    partidoService.guardarPartido(partidoExistente);
+    
+    return ResponseEntity.ok(partidoExistente); 
+}
 
-    //@DeleteMapping("/{id}")
-    //public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
-      //  System.out.println("DEBUG: [PartidoController] -> Intentando eliminar partido con ID: " + id);
-        
-       
-        //Partido partidoExistente = partidoService.buscarPorId(id);
-        //if (partidoExistente == null) {
-          //  return ResponseEntity.notFound().build(); 
-        //}
-        
-        
-        //partidoService.eliminarPartido(id);
-        
-        //return ResponseEntity.noContent().build(); 
-    //}
+    @PostMapping
+    public ResponseEntity<Partido> crearPartido(@RequestBody Partido partido) { 
+        System.out.println("DEBUG: Intentando crear un nuevo partido");
+        partidoService.guardarPartido(partido);
+    return new ResponseEntity<>(partido, HttpStatus.CREATED);
+}
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
+        System.out.println("DEBUG: [PartidoController] -> Intentando eliminar partido con ID: " + id);
+        Partido partidoExistente = partidoService.buscarPorId(id);
+        if (partidoExistente == null) {
+            return ResponseEntity.notFound().build(); 
+        }
+        partidoService.eliminarPartido(id);
+        return ResponseEntity.noContent().build(); 
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Partido> buscarPorId(@PathVariable("id") Integer id) {

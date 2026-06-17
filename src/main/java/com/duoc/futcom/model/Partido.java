@@ -16,22 +16,21 @@ public class Partido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_partido")
-    private int id_partido;
+    private Integer id_partido;
     
-    @ManyToOne
+    @ManyToOne 
     @JoinColumn(name = "local_id") 
     @NotNull
-    private Seleccion seleccionLocal;
+    private Seleccion local;
 
-    @ManyToOne
+    @ManyToOne 
     @JoinColumn(name = "visitante_id") 
     @NotNull
-    private Seleccion seleccionVisitante;
+    private Seleccion visitante;
 
-    @ManyToOne
+    @ManyToOne 
     @JoinColumn(name = "estadio_id") 
-    @JsonIgnore
+
     @NotNull
     private Estadio estadio;
-    
 }

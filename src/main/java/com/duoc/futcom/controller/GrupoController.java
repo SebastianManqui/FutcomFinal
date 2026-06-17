@@ -19,11 +19,13 @@ public class GrupoController {
     public List<Grupo> listar() {
         return grupoService.listarTodo();
     }
-
     @PostMapping
-    public void guardar(@Valid @RequestBody Grupo grupo) {
+    public ResponseEntity<Grupo> crearGrupo(@RequestBody Grupo grupo) {
+        System.out.println("DEBUG: [GrupoController] -> Creando un nuevo grupo");
         grupoService.guardar(grupo);
+        return new ResponseEntity<>(grupo, HttpStatus.CREATED);
     }
+
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
@@ -50,21 +52,5 @@ public class GrupoController {
         grupoService.guardar(grupoExistente);
                 return ResponseEntity.ok(grupoExistente);
     }
-    //revisar
-    //@DeleteMapping("/{id}")
-    //public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
-      //  System.out.println("DEBUG: Iniciando proceso de eliminación para el Grupo ID: " + id);
-        
-        
-        //Grupo grupoExistente = grupoService.buscarPorId(id);
-        //if (grupoExistente == null) {
-          //  return ResponseEntity.notFound().build(); 
-        //}
-        
-       
-        //grupoService.eliminar(id);
-        //System.out.println("DEBUG: Grupo eliminado correctamente.");
-        
-        //return ResponseEntity.noContent().build(); 
-    //}
 }
+   

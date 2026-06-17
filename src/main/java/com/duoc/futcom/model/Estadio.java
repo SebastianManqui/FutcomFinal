@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,5 +32,6 @@ public class Estadio {
    
 
     @OneToMany(mappedBy = "estadio")
+    @JsonIgnore
     private List<Partido> partidos;
 }
