@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 
@@ -27,11 +29,18 @@ public class EstadioController {
     public Estadio buscar(@PathVariable Integer id) {
         return estadioService.buscarEstadioPorId(id);
     }
-
     @PostMapping
-    public void guardar(@Valid @RequestBody Estadio estadio) { 
+    public ResponseEntity<Estadio> guardar(@Valid @RequestBody Estadio estadio) { 
+        System.out.println("DEBUG: [EstadioController] -> Intentando crear un nuevo estadio: " + estadio.getNombre());
+        
+        // Ejecuta el método void del servicio
         estadioService.guardar(estadio);
+        
+        // Retornamos el estado 201 Created junto con el objeto recibido
+        return new ResponseEntity<>(estadio, HttpStatus.CREATED);
     }
+
+   
 
 
     @DeleteMapping("/{id}") 

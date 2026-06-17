@@ -53,18 +53,29 @@ public class SecurityConfig {
                 ).permitAll()
 
                 // Lectura (GET): cualquier usuario autenticado (USER o ADMIN)
-                .requestMatchers(HttpMethod.GET, "/api/v1/**").hasAnyRole("USER", "ADMIN")
+                //.requestMatchers(HttpMethod.GET, "/api/v1/**").hasAnyRole("USER", "ADMIN")
+                // Lectura (GET): cualquier usuario autenticado
+                .requestMatchers(HttpMethod.GET, "/api/v1/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+
+                // Escritura (POST, PUT, DELETE): rutas protegidas
+                .requestMatchers(HttpMethod.POST, "/api/v1/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/api/v1/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/api/v1/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
 
                 // Escritura (POST, PUT, DELETE): solo ADMIN
+                //.requestMatchers(HttpMethod.POST, "/api/v1/**").hasAnyRole("USER", "ADMIN")
+                //.requestMatchers(HttpMethod.PUT, "/api/v1/**").hasAnyRole("USER", "ADMIN")
+                //.requestMatchers(HttpMethod.DELETE, "/api/v1/**").hasAnyRole("USER", "ADMIN")
+
+
+
+
+
+
+                
                 //.requestMatchers(HttpMethod.POST, "/api/v1/**").hasRole("USER,ADMIN")
                 //.requestMatchers(HttpMethod.PUT, "/api/v1/**").hasRole("USER,ADMIN")
                 //.requestMatchers(HttpMethod.DELETE, "/api/v1/**").hasRole("USER, ADMIN")
-                .requestMatchers(HttpMethod.POST, "/api/v1/**")
-                .hasAnyRole("USER", "ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/api/v1/**")
-                .hasAnyRole("USER", "ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/api/v1/**")
-                .hasAnyRole("USER", "ADMIN")
 
                 // Cualquier otra ruta requiere autenticación
                 .anyRequest().authenticated()

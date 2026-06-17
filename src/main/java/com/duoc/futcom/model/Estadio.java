@@ -16,7 +16,7 @@ public class Estadio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_estadio;
+    private Integer id_estadio;
 
     @NotBlank
     private String nombre;
