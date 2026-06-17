@@ -56,9 +56,15 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/v1/**").hasAnyRole("USER", "ADMIN")
 
                 // Escritura (POST, PUT, DELETE): solo ADMIN
-                .requestMatchers(HttpMethod.POST, "/api/v1/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/api/v1/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/api/v1/**").hasRole("ADMIN")
+                //.requestMatchers(HttpMethod.POST, "/api/v1/**").hasRole("USER,ADMIN")
+                //.requestMatchers(HttpMethod.PUT, "/api/v1/**").hasRole("USER,ADMIN")
+                //.requestMatchers(HttpMethod.DELETE, "/api/v1/**").hasRole("USER, ADMIN")
+                .requestMatchers(HttpMethod.POST, "/api/v1/**")
+                .hasAnyRole("USER", "ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/api/v1/**")
+                .hasAnyRole("USER", "ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/api/v1/**")
+                .hasAnyRole("USER", "ADMIN")
 
                 // Cualquier otra ruta requiere autenticación
                 .anyRequest().authenticated()

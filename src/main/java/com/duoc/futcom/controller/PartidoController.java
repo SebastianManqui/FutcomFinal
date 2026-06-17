@@ -48,21 +48,21 @@ public class PartidoController {
         return ResponseEntity.ok(partidoExistente); 
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
-        System.out.println("DEBUG: [PartidoController] -> Intentando eliminar partido con ID: " + id);
+    //@DeleteMapping("/{id}")
+    //public ResponseEntity<Void> eliminar(@PathVariable("id") Integer id) {
+      //  System.out.println("DEBUG: [PartidoController] -> Intentando eliminar partido con ID: " + id);
         
        
-        Partido partidoExistente = partidoService.buscarPorId(id);
-        if (partidoExistente == null) {
-            return ResponseEntity.notFound().build(); 
-        }
+        //Partido partidoExistente = partidoService.buscarPorId(id);
+        //if (partidoExistente == null) {
+          //  return ResponseEntity.notFound().build(); 
+        //}
         
         
-        partidoService.eliminarPartido(id);
+        //partidoService.eliminarPartido(id);
         
-        return ResponseEntity.noContent().build(); 
-    }
+        //return ResponseEntity.noContent().build(); 
+    //}
 
     @GetMapping("/{id}")
     public ResponseEntity<Partido> buscarPorId(@PathVariable("id") Integer id) {

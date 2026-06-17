@@ -51,11 +51,11 @@ public class SeleccionController {
         seleccionService.guardaSeleccion(seleccion);
     }
 
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable int id) {
-        System.out.println("DEBUG: Eliminando seleccion ID: " + id);
-        seleccionService.eliminarSeleccion(id);
-    }
+    //@DeleteMapping("/{id}")
+    //public void eliminar(@PathVariable int id) {
+      //  System.out.println("DEBUG: Eliminando seleccion ID: " + id);
+     //   seleccionService.eliminarSeleccion(id);
+    //}
 
 
     @PutMapping("/{id}")
@@ -80,14 +80,11 @@ public class SeleccionController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar2(@PathVariable int id) {
-        System.out.println("DEBUG: Eliminando seleccion ID: " + id);
-        
-        
-        Seleccion seleccionExistente = seleccionService.buscarSeleccionPorId(id);
-        if (seleccionExistente == null) {
-            return ResponseEntity.notFound().build(); 
+         System.out.println("DEBUG: Eliminando seleccion ID: " + id);
+          Seleccion seleccionExistente = seleccionService.buscarSeleccionPorId(id);
+          if (seleccionExistente == null) {
+             return ResponseEntity.notFound().build(); 
         }
-        
         seleccionService.eliminarSeleccion(id);
         return ResponseEntity.noContent().build(); 
     }
