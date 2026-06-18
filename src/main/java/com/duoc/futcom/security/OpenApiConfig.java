@@ -1,4 +1,4 @@
-package com.duoc.futcom.security; // Asegúrate de que use el paquete correcto
+package com.duoc.futcom.security; 
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
