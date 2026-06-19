@@ -11,6 +11,16 @@ Un componente diferenciador de este proyecto es la integración de servicios ext
 a través del WeatherController, proporcionando información en tiempo real sobre el clima en los distintos estadios. En conclusión, este trabajo representa una ejecución práctica integral que combina el desarrollo, el consumo de servicios externos
 y el cumplimiento de los estándares de arquitectura de software modernos exigidos en el nivel universitario.
 
+
+Tecnologías Avanzadas Incorporadas
+
+Seguridad y Autenticación con JWT (JSON Web Tokens): Para restringir el acceso a los endpoints críticos del sistema, se integró Spring Security junto con un filtro personalizado (JwtFilter). El flujo consiste en que los usuarios autenticados reciben un token firmado digitalmente, el cual viaja en la cabecera Authorization: Bearer <token> de cada petición. Esto asegura que operaciones sensibles como la creación, modificación o eliminación de datos requieran un rol validado, protegiendo al backend de accesos no autorizados.
+
+Documentación Interactiva con Swagger (Springdoc OpenAPI):Con el fin de simplificar el testeo y eliminar la dependencia exclusiva de herramientas externas, se configuró la interfaz gráfica de Swagger UI. Al levantar el microservicio, la documentación se genera de forma dinámica reflejando todos los esquemas de datos expuestos por cada controller, facilitando la ejecución inmediata de pruebas funcionales directo desde el navegador web.
+
+Contenerización con Docker: Pensando en los estándares modernos de despliegue y portabilidad, el entorno de la aplicación se encapsuló utilizando contenedores. A través de la definición de un archivo Dockerfile, es posible compilar, empaquetar y ejecutar la aplicación de manera idéntica en cualquier sistema operativo, aislando las variables de entorno y optimizando la infraestructura del software de fútbol. Esto sirve para evitar levantar laragon cada vez que se ejecute el proyecto en vs.
+
+
 ¿Como se ejecuta entonces? 
 Primero abrimos el VS (visual studio), clonar el repository en la consola, luego se conecta al base dato del laragon y se ejecutaria en el proyecto principal en visual, ya ejecutado creamos las tablas y todo lo que con lleva nuestro proyecto, despues en el postman agregamos todos los endpoint que pusimos en los controladores e iniciamos las consultas correspondientes como listar, agregar, ect.
 
