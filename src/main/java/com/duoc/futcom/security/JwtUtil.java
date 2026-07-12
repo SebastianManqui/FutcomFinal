@@ -14,10 +14,10 @@ import java.util.Date;
  * Utilidad para generar, parsear y validar tokens JWT.
  *
  * Un JWT tiene tres partes separadas por puntos:
- *   Header.Payload.Signature
+ * Header.Payload.Signature
  *
  * - Header: algoritmo de firma (HS256).
- * - Payload: claims → subject (username), role, iat (emitido), exp (vence).
+ * - Payload: claims -> subject (username), role, iat (emitido), exp (vence).
  * - Signature: HMAC-SHA256 firmado con la clave secreta del servidor.
  */
 @Component
@@ -28,7 +28,11 @@ public class JwtUtil {
     /** Duración del token: 24 horas en milisegundos. */
     private static final long EXPIRATION_MS = 86_400_000L;
 
-    public JwtUtil(@Value("${jwt.secret}") String secret) {
+    /**
+     * Constructor con valor por defecto para el JWT_SECRET.
+     * Si no se encuentra la variable de entorno, usa la cadena proporcionada.
+     */
+    public JwtUtil(@Value("${JWT_SECRET:bD4kP9mX2nQ7rT1vY6wZ3aE8cF0hJ5sL2uI9oN4xG7jK1mB6pR3tW8yA5qC0eH}") String secret) {
         // La clave debe tener al menos 32 caracteres (256 bits) para HMAC-SHA256
         this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
