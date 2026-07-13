@@ -1,603 +1,718 @@
 {
-	"info": {
-		"_postman_id": "3d0104d9-feb4-4dfc-a936-fe94d0d36eb5",
-		"name": "Fut-com",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "54570942"
-	},
-	"item": [
-		{
-			"name": "ListarJugadores",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/jugadores",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"jugadores"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "BuscarJugadorPorID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/jugadores/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"jugadores",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "CrearJugador",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Cristiano Ronaldo\",\r\n    \"edad\": 39,\r\n    \"goles\": 890,\r\n    \"asistencias\": 250,\r\n    \"nacionalidad\": \"Portugal\",\r\n    \"clubActual\": \"Al-Nassr\",\r\n    \"numero\": 7,\r\n    \"partidos_jugados\": 1200\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/jugadores",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"jugadores"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ActualizarJugador",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/jugadores",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"jugadores"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "EliminarJugadores",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/jugadores",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"jugadores"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ListarSelecciones",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/selecciones",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"selecciones"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "BuscarSeleccionesPorId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/selecciones",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"selecciones"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ActualizarSelecciones",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/selecciones",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"selecciones"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "CrearSelecciones",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Uruguay\",\r\n    \"rankingFifa\": 11,\r\n    \"confederacion\": \"CONMEBOL\",\r\n    \"codigoIso\": \"URU\",\r\n    \"directorTecnico\": \"Marcelo Bielsa\",\r\n    \"titulosMundiales\": 2\r\n}\r\n\r\n{\r\n    \"nombre\": \"Japón\",\r\n    \"rankingFifa\": 15,\r\n    \"confederacion\": \"AFC\",\r\n    \"codigoIso\": \"JPN\",\r\n    \"directorTecnico\": \"Hajime Moriyasu\",\r\n    \"titulosMundiales\": 0\r\n}\r\n\r\n\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/selecciones",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"selecciones"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "EliminarSelecciones",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/selecciones",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"selecciones"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ListarPartidos",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{jwt}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/partidos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"partidos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "CrearPartidos",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "ActualizarPartidos",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/partidos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"partidos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "BuscarPartidoPorID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/partidos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"partidos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "EliminarPartidos",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/partidos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"partidos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ListarGrupos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/grupos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"grupos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "EliminarGrupo",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/jugadores/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"jugadores",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ActualizarGrupos",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/grupos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"grupos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "BuscarEstadioPorId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/estadios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"estadios"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "CrearEstadio",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/estadios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"estadios"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "EliminarEstadios",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/estadios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"estadios"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ActualizarEstadios",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/estadios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"estadios"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ListarEstadios",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/estadios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"estadios"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ConsultarClimaPromedio",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/clima",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"clima"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Registrar",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"diegoat\",\r\n    \"password\":\"diegoat1234\"\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/auth/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"auth",
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"diegoat\",\r\n    \"password\":\"diegoat1234\"\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/auth/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"auth",
-						"login"
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"variable": [
-		{
-			"key": "jwttt",
-			"value": ""
-		}
-	]
+  "info": {
+    "_postman_id": "3d0104d9-feb4-4dfc-a936-fe94d0d36eb5",
+    "name": "Fut-com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54570942",
+    "_collection_link": "https://go.postman.co/collection/54570942-3d0104d9-feb4-4dfc-a936-fe94d0d36eb5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ListarJugadores",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/jugadores",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "jugadores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BuscarJugadorPorID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/jugadores/1",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "jugadores",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CrearJugador",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Federico Valverde\",\r\n    \"edad\": 25,\r\n    \"goles\": 2,\r\n    \"asistencias\": 5,\r\n    \"nacionalidad\": \"Uruguaya\",\r\n    \"clubActual\": \"Real Madrid\",\r\n    \"numero\": 15,\r\n    \"partidos_jugados\": 42,\r\n    \"seleccion\": {\r\n        \"id\": 7\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/jugadores",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "jugadores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarJugador",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/jugadores",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "jugadores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarJugadores",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/jugadores",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "jugadores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarSelecciones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/selecciones",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "selecciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BuscarSeleccionesPorId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/selecciones/1",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "selecciones",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarSelecciones",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/selecciones",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "selecciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CrearSelecciones",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Uruguay\",\r\n    \"rankingFifa\": 11,\r\n    \"confederacion\": \"CONMEBOL\",\r\n    \"codigoIso\": \"URU\",\r\n    \"directorTecnico\": \"Marcelo Bielsa\",\r\n    \"titulosMundiales\": 2\r\n}\r\n\r\n{\r\n    \"nombre\": \"Japón\",\r\n    \"rankingFifa\": 15,\r\n    \"confederacion\": \"AFC\",\r\n    \"codigoIso\": \"JPN\",\r\n    \"directorTecnico\": \"Hajime Moriyasu\",\r\n    \"titulosMundiales\": 0\r\n}\r\n\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/selecciones",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "selecciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarSelecciones",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/selecciones",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "selecciones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarPartidos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{jwt}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/partidos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "partidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CrearPartidos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/partidos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "partidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarPartidos",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/partidos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "partidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BuscarPartidoPorID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/partidos/1",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "partidos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarPartidos",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/partidos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "partidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarGrupos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/grupos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "grupos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Grupo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/grupos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "grupos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarGrupo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/grupos/2",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "grupos",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarGrupos",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/grupos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "grupos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BuscarEstadioPorId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/estadios/1",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estadios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CrearEstadio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/estadios",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estadios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarEstadios",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/estadios",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estadios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarEstadios",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/estadios",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estadios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarEstadios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/estadios",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estadios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ConsultarClimaPromedio",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/clima",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"MESSIRVEeeeeeeee\",\r\n    \"password\":\"diegoat1234\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/auth/register",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"MESSIRVEeeeeeeeeeee\",\r\n    \"password\":\"diegoat1234\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/auth/login",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BuscarGrupoPorID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://futcomfinal-production.up.railway.app/api/v1/grupos",
+          "protocol": "https",
+          "host": [
+            "futcomfinal-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "grupos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "jwttt",
+      "value": ""
+    }
+  ]
 }
